@@ -11,7 +11,7 @@
  if($_SERVER['REQUEST_METHOD'] === 'POST') {
 	  // getting values from the form
 	 $title = $_POST['title'];
-	 $image = $_POST['image'];
+	 $image = '';
 	 $description = $_POST['description'];
 	 $price = $_POST['price'];
 	 $date = date("t-m-d h:i:s");
@@ -48,7 +48,7 @@
 		 	VALUES (:title, :image , :description , :price , :date)");
 		 // bind values
 		 $statment->bindValue(':title' , $title);
-		 $statment->bindValue(':image' , $imagePathd);
+		 $statment->bindValue(':image' , $imagePath);
 		 $statment->bindValue(':description' , $description);
 		 $statment->bindValue(':price' , $price);
 		 $statment->bindValue(':date' , $date);

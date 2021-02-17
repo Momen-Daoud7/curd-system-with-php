@@ -114,7 +114,6 @@
 	<main class="container">
 		<h1>Edite <b><?php echo $products['title'] ?></b></h1>
 		<a href="index.php" class="btn btn-secondary">Go back to prodcuts</a>
-		<!-- products form -->
 
 		<!-- error messages -->
 		<?php if(!empty($errors)):?>
@@ -130,6 +129,7 @@
 			<img src="<?php echo $products['image'] ?>" class="thum-image d-block my-4 " width="120px">
 		<?php endif; ?>
 
+		<!-- products form -->
 		<form class="col-md-8" action="" method="POST" enctype="multipart/form-data">
 			<div class="form-group">
 			    <label>product image</label>

@@ -19,9 +19,10 @@
   <link rel="stylesheet" type="text/css" href="./bootstrap-4.4.1.css">
 </head>
 <body>
+  <main class="container">
     <h1>Products Table</h1>
     <a href="create.php"  class="btn btn-success">Create product</a>
-	  <table class="table col-md-10 mx-auto">
+	  <table class="table">
 	  		<thead>
                  <tr>
                    <th scope="col">#</th>
@@ -39,19 +40,24 @@
                 <?php forEach($products as $i => $product ) {?>
                	<tr>
                     <th row="scope"> <?php echo $i + 1?></th>
-                    <td ></td>
+                    <td >
+                      <img src="<?php echo $product['image'] ?>"  class ="thum-image" width="50px">
+                    </td>
                     <td ><?php echo $product['title']?> </td>
                     <td ><?php echo $product['create_date']?> </td>
                     <td><?php echo $product['price']?> </td>
                     <td>
-                      <button class="outline btn btn-sm btn-outline-primary">Edit</button>
-                      <button class="outline btn btn-sm btn-outline-danger">Delete</button>
+                      <a  href="update.php?id=<?php echo $product['id'] ?>" class="outline btn btn-sm btn-outline-primary">Edit</a>
+                      <form action="delete.php" method="post" style="display: inline-block;">
+                        <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+                        <button class="outline btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
                     </td>
                  </tr>
                <?php } ?>
                  
              </tbody>
          </table>
-
+</main>
 </body>
 </html>
